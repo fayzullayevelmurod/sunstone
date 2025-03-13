@@ -1,3 +1,20 @@
+const togglePassword = document.querySelectorAll('.toggle-password');
+if (togglePassword) {
+  togglePassword.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetId = button.getAttribute('data-target');
+      const input = document.getElementById(targetId);
+
+      if (input.type === 'password') {
+        input.type = 'text';
+        // Ikonani o'zgartirish mumkin (masalan, yashirish uchun boshqa SVG)
+      } else {
+        input.type = 'password';
+        // Ikonani qayta tiklash mumkin
+      }
+    });
+  });
+}
 // Mobile menu toggle
 const menuButton = document.getElementById('menuButton');
 if (menuButton) {
